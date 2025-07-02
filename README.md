@@ -34,4 +34,5 @@
 - Смещаем все элементы, которые больше текущего, вправо и вставляем элемент на его место.
 - Повторяем процесс для всех элементов.
 
-![Insert](https://github.com/user-attachments/assets/a25f939d-38be-49bd-ad55-3ae9c3040334)
+![Insert](https://github.com/user-attachments/assets/5fbab5ee-1094-4080-b30e-129b007e66be)
+
