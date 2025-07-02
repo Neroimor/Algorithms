@@ -14,7 +14,7 @@
 ![BubbleSort](https://github.com/user-attachments/assets/b69bbc0e-a1a0-4423-ad72-c39896c630d5)
 
 
-### Сортировка выбором (Bubble sorting)
+### Сортировка выбором (Sorting by selection)
 
 В сортировки выбором у нас происходят:
 1) Поиск индекса минимального элемента

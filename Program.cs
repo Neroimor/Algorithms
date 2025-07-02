@@ -47,7 +47,21 @@ await Task.Run(() =>
 });
 
 
+await Task.Run(() =>
+{
+    Console.WriteLine("Insert Sorting\n");
+    Stopwatch stopwatch = new Stopwatch();
+    stopwatch.Start();
+    ISorting<int> sorting = new InsertSorting<int>();
+    int[] sortedArray = sorting.Procces(array);
+    PrintArray(array);
+    Console.WriteLine();
+   // int[] reverseSortedArray = sorting.ReverseProcces(array);
+   // PrintArray(reverseSortedArray);
+    stopwatch.Stop();
+    Console.WriteLine($"\n{stopwatch.Elapsed}\n");
 
+});
 
 void PrintArray<T>(T[] array)
 {

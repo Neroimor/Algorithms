@@ -56,6 +56,10 @@ namespace Algorithm.Sorting
                         swapped = true;
                     }
                 }
+                if (!swapped)
+                {
+                    break;
+                }
             }
             return array;
         }
