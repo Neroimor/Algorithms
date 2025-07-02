@@ -11,4 +11,4 @@
 2) сравниваем два соседних элемента массива
 3) если текущий элемент больше следующего то меняем их местами
 
-![BubbleSort](https://github.com/user-attachments/assets/66dc450b-7cf7-40c7-ab57-fdb711f433cc)
+![BubbleSort](https://github.com/user-attachments/assets/b69bbc0e-a1a0-4423-ad72-c39896c630d5)
