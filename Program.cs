@@ -56,8 +56,8 @@ await Task.Run(() =>
     int[] sortedArray = sorting.Procces(array);
     PrintArray(array);
     Console.WriteLine();
-   // int[] reverseSortedArray = sorting.ReverseProcces(array);
-   // PrintArray(reverseSortedArray);
+    int[] reverseSortedArray = sorting.ReverseProcces(array);
+    PrintArray(reverseSortedArray);
     stopwatch.Stop();
     Console.WriteLine($"\n{stopwatch.Elapsed}\n");
 
