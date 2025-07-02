@@ -22,4 +22,4 @@
 
 В конечном итоге получается отсортированный список
 
-![Selection](https://github.com/user-attachments/assets/7c1b082e-dfe1-435b-81ae-a949cfc93ef6)
+![Selection](https://github.com/user-attachments/assets/e8bfe643-193c-4175-ad0c-eda6037548ef)
