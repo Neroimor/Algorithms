@@ -35,6 +35,9 @@
 
 ![Insert](https://github.com/user-attachments/assets/5fbab5ee-1094-4080-b30e-129b007e66be)
 
+### Быстрая сортировка (Quick sorting)
+
+
 ## Как скачать
 
 git clone https://github.com/Neroimor/Algorithms.git
