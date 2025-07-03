@@ -3,18 +3,13 @@ using Algorithm;
 using Algorithm.Sorting;
 using System.Diagnostics;
 
-Console.WriteLine("Original\n");
 GeneratorArray generator = new GeneratorArray();
-int[] array = generator.Generate(20, 100, 2);
-foreach (var item in array)
-{
-    Console.Write(item + " ");
-}
 
-Console.WriteLine("\n\nSorted\n");
+Console.WriteLine("Sorted\n");
 
 await Task.Run(() =>
 {
+    int[] array = generator.Generate(20, 100, 2);
     Console.WriteLine("Bubble Sorting\n");
     Stopwatch stopwatch = Stopwatch.StartNew();
     stopwatch.Start();
@@ -32,6 +27,7 @@ await Task.Run(() =>
 
 await Task.Run(() =>
 {
+    int[] array = generator.Generate(20, 100, 2);
     Console.WriteLine("Selection Sorting\n");
     Stopwatch stopwatch = new Stopwatch();
     stopwatch.Start();
@@ -49,10 +45,30 @@ await Task.Run(() =>
 
 await Task.Run(() =>
 {
+    int[] array = generator.Generate(20, 100, 2);
     Console.WriteLine("Insert Sorting\n");
     Stopwatch stopwatch = new Stopwatch();
     stopwatch.Start();
     ISorting<int> sorting = new InsertSorting<int>();
+    int[] sortedArray = sorting.Procces(array);
+    PrintArray(array);
+    Console.WriteLine();
+    int[] reverseSortedArray = sorting.ReverseProcces(array);
+    PrintArray(reverseSortedArray);
+    stopwatch.Stop();
+    Console.WriteLine($"\n{stopwatch.Elapsed}\n");
+
+});
+
+
+
+await Task.Run(() =>
+{
+    int[] array = generator.Generate(20, 100, 2);
+    Console.WriteLine("Quick Sorting\n");
+    Stopwatch stopwatch = new Stopwatch();
+    stopwatch.Start();
+    ISorting<int> sorting = new QuickSorting<int>();
     int[] sortedArray = sorting.Procces(array);
     PrintArray(array);
     Console.WriteLine();
