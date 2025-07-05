@@ -9,6 +9,6 @@ namespace Algorithm.Multiplication
     internal interface IMultiplication
     {
 
-        public int Multiply(string a, string b);
+        public string Multiply(string a, string b);
     }
 }
