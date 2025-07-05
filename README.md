@@ -44,12 +44,6 @@
 
 ![Quick](https://github.com/user-attachments/assets/6d1d9623-28bb-450b-a14e-d4c14c6ed7f2)
 
-
-
-
-
-
-
 ## Как скачать
 
 git clone https://github.com/Neroimor/Algorithms.git
