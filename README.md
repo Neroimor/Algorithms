@@ -46,7 +46,6 @@
 
 
 
-<<<<<<< HEAD
 
 ## Алгоритмы умножения
 
@@ -99,8 +98,8 @@
 ```
 
 
-=======
->>>>>>> b1dce4b6b6b7eb692942fbb046f02b963439ef5d
 ## Как скачать
 
 git clone https://github.com/Neroimor/Algorithms.git
+
+

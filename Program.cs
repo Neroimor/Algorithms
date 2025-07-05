@@ -13,3 +13,6 @@ Task.Run(() =>
     schoolMultiplication.Multiply(a, b);
 
 }).Wait();
+
+
+
