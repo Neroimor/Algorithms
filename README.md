@@ -169,6 +169,31 @@ X = 5678, Y = 1234
 ```
 
 
+## Алгоритмы поиска
+
+### Линейный поиск (Linear search)
+Линейный поиск — это простой алгоритм, который проходит по всем элементам массива и сравнивает каждый элемент с искомым значением. Если значение найдено, возвращается его индекс, иначе возвращается -1.
+
+```csharp
+        private bool IsEqual(T a, T b)
+        {
+            return a.CompareTo(b) == 0;
+        }
+
+        public int Search(T[] array, T value)
+        {
+
+            for (int i = 0; i < array.Length; i++) {
+
+                if (IsEqual(value, array[i]))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+```
+
 ## Как скачать
 
 git clone https://github.com/Neroimor/Algorithms.git
