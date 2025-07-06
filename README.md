@@ -49,6 +49,77 @@
 
 ## Алгоритмы умножения
 
+
+### Алгоритм Карацуба (Karatsuba algorithm)
+
+Алгоритм Карацуба — это метод умножения больших чисел, который использует разбиение чисел на части и рекурсивное вычисление произведения. Он эффективнее традиционного умножения, особенно для очень больших чисел.
+
+X = 5678, Y = 1234
+Шаги: 
+1) Разделить X и Y на две равные части (n = 4 цифры → половина = 2 цифры):
+   X = 5678  →  a = 56, b = 78
+   Y = 1234  →  c = 12, d = 34
+
+2) Произведения половин:
+   ac = 56 × 12 = 672
+   bd = 78 × 34 = 2652
+
+3) Произведение сумм:
+   (a + b) = 56 + 78 = 134
+   (c + d) = 12 + 34 = 46
+   (a + b) × (c + d) = 134 × 46 = 6164
+
+4) «Средний» член:
+   ad+bc = 6164 − 672 − 2652 = 2840
+
+5) Сборка результата (так как n = 4, то 10ⁿ = 10⁴, n/2 = 2 → 10^(n/2) = 10²):
+   X × Y = ac·10⁴ + (ad+bc)·10² + bd  
+         = 672·10⁴ + 2840·10² + 2652  
+         = 6 720 000 + 284 000 + 2 652  
+         = 7 006 652
+
+ИТОГО: 5678 × 1234 = 7006652
+
+Код программы на C#:
+```csharp
+        private int KaratsubaCross(int x, int y)
+        {
+            if (x < 10 || y < 10)
+                return x * y;
+
+            int n1 = x.ToString().Length, n2 = y.ToString().Length;
+            int n = Math.Max(n1, n2);
+            if (n % 2 != 0) n++;
+            int half = n / 2;
+
+
+            string value1 = x.ToString().PadLeft(n, '0');
+            string value2 = y.ToString().PadLeft(n, '0');
+            string tempA = value1.Substring(0, half);
+            string tempB = value1.Substring(half);
+            string tempC = value2.Substring(0, half);
+            string tempD = value2.Substring(half);
+    
+
+
+            int a = int.Parse(tempA);
+            int b = int.Parse(tempB);
+            int c = int.Parse(tempC);
+            int d = int.Parse(tempD);
+            int p = a + b;
+            int q = c+d;
+            int pq = KaratsubaCross(p, q);
+            int ac = KaratsubaCross(a, c);
+            int bd = KaratsubaCross(b, d);
+            int adbc = pq-ac-bd;
+
+
+
+
+            return (int)Math.Pow(10,n)*ac+(int)Math.Pow(10,n/2)*adbc+bd;
+        }
+```
+
 ### Алгоритм начальной школы (умножение столбиком)
 
 Эффект Черепахи и Зайца, или как умножать числа столбиком
@@ -97,6 +168,31 @@
     7006652
 ```
 
+
+## Алгоритмы поиска
+
+### Линейный поиск (Linear search)
+Линейный поиск — это простой алгоритм, который проходит по всем элементам массива и сравнивает каждый элемент с искомым значением. Если значение найдено, возвращается его индекс, иначе возвращается -1.
+
+```csharp
+        private bool IsEqual(T a, T b)
+        {
+            return a.CompareTo(b) == 0;
+        }
+
+        public int Search(T[] array, T value)
+        {
+
+            for (int i = 0; i < array.Length; i++) {
+
+                if (IsEqual(value, array[i]))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+```
 
 ## Как скачать
 
