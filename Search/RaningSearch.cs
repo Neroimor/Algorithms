@@ -26,6 +26,13 @@ namespace Algorithm.Search
                 Console.WriteLine($"Linear Search: Element {target} found at index {result}");
             }).Wait();
 
+
+            Task.Run(() =>
+            {
+                BinarySearch<int> linearSearch = new BinarySearch<int>();
+                int result = linearSearch.Search(arr, target);
+                Console.WriteLine($"Binary Search: Element {target} found at index {result}");
+            }).Wait();
         }
     }
 }
