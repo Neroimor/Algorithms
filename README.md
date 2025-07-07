@@ -194,6 +194,73 @@ X = 5678, Y = 1234
         }
 ```
 
+
+### Бинарный поиск (Binary search)
+
+Бинарный поиск — это алгоритм, который работает на отсортированных массивах. Он делит массив пополам и сравнивает средний элемент с искомым значением. Если значение меньше среднего, поиск продолжается в левой половине, если больше — в правой.
+Бинарный поиск можно решить рекурсивно или итеративно.
+
+
+#### Рексурсивный способ
+```csharp
+        private int RecursionBinSearch(T[] array, T Value, int first, int last)
+        {
+            if (first > last)
+            {
+                return -1;
+            }
+
+            var middle = (first + last) / 2;
+            var middleValue = array[middle];
+
+            if (IsEqual(Value, middleValue))
+            {
+                return middle;
+            }
+            else
+            {
+                if (IsGreaterThan(Value, middleValue))
+                {
+                   return RecursionBinSearch(array, Value, middle + 1, last);
+                }
+                else
+                {
+                   return RecursionBinSearch(array, Value, first, middle - 1);
+                }
+            }
+
+
+        }
+```
+
+
+#### Итеративный способ
+```csharp
+        private int IterativeBinSearch(T[] array, T value, int left, int right)
+        {
+
+            while (left <= right)
+            {
+                var middle = (left + right) / 2;
+
+                if (IsEqual(value, array[middle]))
+                {
+                    return middle;
+                }
+                else if (IsLessThan(value, array[middle]))
+                {
+                    right = middle - 1;
+                }
+                else if (IsGreaterThan(value, array[middle]))
+                {
+                    left = middle + 1;
+                }
+            }
+
+            return -1;
+        }
+```
+
 ## Как скачать
 
 git clone https://github.com/Neroimor/Algorithms.git
