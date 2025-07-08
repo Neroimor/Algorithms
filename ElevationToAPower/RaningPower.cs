@@ -23,6 +23,16 @@ namespace Algorithm.ElevationToAPower
 
 
             }).Wait();
+
+            Task.Run(() =>
+            {
+                FastPower<int> FastPower = new FastPower<int>();
+                int a = 2;
+                int n = 3;
+                Console.WriteLine($"Fast Power Recursive: {a} raised to the power of {n} is {FastPower.Pow(a, n)}");
+
+
+            }).Wait();
         }
     }
 }
