@@ -11,12 +11,15 @@ namespace Algorithm.ElevationToAPower
     {
         public T Pow(T a, int n)
         {
+            if (n == 0) return T.One;
             return Process(a, n);
         }
 
         private T Process(T a, int n)
         {
-            T value = a;
+
+            
+          T value = a;
             for (int i = 0; i < n-1; i++)
             {
                 value*= a;
