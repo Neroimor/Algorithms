@@ -261,6 +261,26 @@ X = 5678, Y = 1234
         }
 ```
 
+
+## Алгоритмы возведения в степень
+
+### Стандтный алгоритм возведения в степень (Standard exponentiation algorithm)
+
+```
+csharp
+        private T Process(T a, int n)
+        {
+            T value = a;
+            for (int i = 0; i < n-1; i++)
+            {
+                value*= a;
+            }
+
+            return value;
+        }
+```
+
+
 ## Как скачать
 
 git clone https://github.com/Neroimor/Algorithms.git
